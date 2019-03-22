@@ -75,7 +75,7 @@ def get_song(path='', blank=False):
         root = tree.getroot()
         
         # Time conversion
-        pattern = "%d/%m/%Y %H:%M:%S %p"
+        pattern = "%d/%m/%Y %I:%M:%S %p"
         epoch = int(time.mktime(
             time.strptime(root.find('startTime').text, pattern)
         ))
@@ -98,6 +98,7 @@ def get_song(path='', blank=False):
     return(song)
 
 if __name__ == "__main__":
+
     # Assign username/password to variables so I don't
     # have to paste that whole spiel every time
     username = options['Last.fm']['username']
